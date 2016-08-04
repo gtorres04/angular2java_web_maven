@@ -1,0 +1,2 @@
+ proxy=http://hermes.pragma.com.co:8080 
+ rejectUnauthorized=false
