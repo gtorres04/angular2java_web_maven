@@ -1,31 +1,17 @@
-import { Component } from '@angular/core';
-export /**
- * Hero
- */
-class Hero {
-  id: number;
-  name: string;
-}
-
+import { Component }       from '@angular/core';
+import { HeroService }     from './hero.service';
+import { HeroesComponent } from './heroes.component';
 @Component({
   selector: 'my-app',
-  template:`
-  <h1>{{title}}</h1>
-  <h2>{{hero.name}} details!</h2>
-  <div><label>id: </label>{{hero.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name">
-  </div>
-  `
+  template: `
+    <h1>{{title}}</h1>
+    <my-heroes></my-heroes>
+  `,
+  directives: [HeroesComponent],
+  providers: [
+    HeroService
+  ]
 })
-export /**
- * AppComponent
- */
-class AppComponent { 
+export class AppComponent {
   title = 'Tour of Heroes';
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
 }
